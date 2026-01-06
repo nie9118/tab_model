@@ -5,9 +5,6 @@
 # ----------------------------------
 # Generate prior datasets on the fly
 # ----------------------------------
-export TORCH_ELASTIC_ENABLE_TRACEBACK=1
-export TORCHDYNAMO_VERBOSE=1
-export TORCH_LOGS="+dynamo,+inductor"
 
 torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-MSP-main/src/orion_msp/train/run.py \
             --wandb_log False \
@@ -56,8 +53,7 @@ torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/z
             --norm_first True \
             --checkpoint_dir ./stage1/checkpoint/dir \
             --save_temp_every 50 \
-            --save_perm_every 1000 \
-            --model_compile True
+            --save_perm_every 1000
 
 
 
@@ -104,5 +100,4 @@ torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/z
             --norm_first True \
             --checkpoint_dir ./stage1/checkpoint/dir \
             --save_temp_every 50 \
-            --save_perm_every 1000 \
-            --model_compile True
+            --save_perm_every 1000
