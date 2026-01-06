@@ -6,7 +6,7 @@
 # Generate prior datasets on the fly
 # ----------------------------------
 
-torchrun --standalone --nproc_per_node=1 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-MSP-main/src/orion_msp/train/run.py \
+torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-MSP-main/src/orion_msp/train/run.py \
             --wandb_log False \
             --wandb_project Orion-MSP \
             --wandb_name Stage1 \
@@ -18,7 +18,7 @@ torchrun --standalone --nproc_per_node=1 /vast/users/guangyi.chen/causal_group/z
             --torch_seed 42 \
             --max_steps 25000 \
             --batch_size 2048 \
-            --micro_batch_size 2 \
+            --micro_batch_size 8 \
             --lr 5e-5 \
             --scheduler cosine_warmup \
             --warmup_proportion 0.02 \
@@ -59,7 +59,7 @@ torchrun --standalone --nproc_per_node=1 /vast/users/guangyi.chen/causal_group/z
 
 
 # Loading prior data from disk and training
-torchrun --standalone --nproc_per_node=1 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-MSP-main/src/orion_msp/train/run.py \
+torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-MSP-main/src/orion_msp/train/run.py \
             --wandb_log False \
             --wandb_project Orion-MSP \
             --wandb_name Stage1 \
@@ -71,7 +71,7 @@ torchrun --standalone --nproc_per_node=1 /vast/users/guangyi.chen/causal_group/z
             --torch_seed 42 \
             --max_steps 25000 \
             --batch_size 2048 \
-            --micro_batch_size 2 \
+            --micro_batch_size 8 \
             --lr 5e-5 \
             --scheduler cosine_warmup \
             --warmup_proportion 0.02 \
