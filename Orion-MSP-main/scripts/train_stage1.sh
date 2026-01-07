@@ -112,16 +112,16 @@
 # ----------------------------------
 
 torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-MSP-main/src/orion_msp/train/run.py \
-            --wandb_log False \
+            --wandb_log True \
             --wandb_project TabICL \
-            --wandb_name Stage1 \
+            --wandb_name ldm \
             --wandb_dir ./wandb/dir \
             --wandb_mode online \
             --device cuda \
             --dtype float32 \
             --np_seed 42 \
             --torch_seed 42 \
-            --max_steps 2500 \
+            --max_steps 25000 \
             --batch_size 512 \
             --micro_batch_size 4 \
             --lr 1e-4 \
@@ -151,7 +151,8 @@ torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/z
             --norm_first True \
             --checkpoint_dir ./tab/stage1/checkpoint/dir \
             --save_temp_every 50 \
-            --save_perm_every 5000
+            --save_perm_every 5000 \
+            --model_compile True
 
 
 # ------------------------------------------------------
@@ -180,9 +181,9 @@ python /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-
 
 # Loading from disk and training
 torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-MSP-main/src/orion_msp/train/run.py \
-            --wandb_log False \
+            --wandb_log True \
             --wandb_project TabICL \
-            --wandb_name Stage1 \
+            --wandb_name ldm \
             --wandb_dir ./wandb/dir \
             --wandb_mode online \
             --device cuda \
@@ -214,4 +215,5 @@ torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/z
             --norm_first True \
             --checkpoint_dir ./tab/stage1/checkpoint/dir \
             --save_temp_every 50 \
-            --save_perm_every 5000
+            --save_perm_every 5000 \
+            --model_compile True
