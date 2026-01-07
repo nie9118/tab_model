@@ -17,9 +17,10 @@ from torch.distributed import init_process_group, destroy_process_group
 
 from tqdm import tqdm
 import warnings
+from torch.multiprocessing import set_start_method
 warnings.filterwarnings("ignore", message=".*nested tensors is in prototype stage.*", category=UserWarning)
 
-from orion_msp.model.orion_msp import OrionMSP
+from tabicl import TabICL
 from orion_msp.prior.dataset import PriorDataset
 from orion_msp.prior.genload import LoadPriorDataset
 from orion_msp.train.optim import get_scheduler
@@ -122,16 +123,10 @@ class Trainer:
             "dropout": self.config.dropout,
             "activation": self.config.activation,
             "norm_first": self.config.norm_first,
-            "row_num_global": self.config.row_num_global,
-            "row_scales": tuple(self.config.row_scales),
-            "row_window": self.config.row_window,
-            "row_num_random": self.config.row_num_random,
-            "row_group_mode": self.config.row_group_mode,
-            "perc_num_latents": self.config.perc_num_latents,
-            "perc_layers": self.config.perc_layers,
         }
 
-        model = OrionMSP(**self.model_config).to(self.config.device)
+        model = TabICL(**self.model_config)
+        model.to(device=self.config.device)
 
         if self.config.freeze_col:
             model.col_embedder.eval()
@@ -153,7 +148,7 @@ class Trainer:
                 model, 
                 device_ids=[self.ddp_local_rank], 
                 broadcast_buffers=False,
-                find_unused_parameters=find_unused,
+                # find_unused_parameters=find_unused,
             )
             self.raw_model = self.model.module
         else:
@@ -468,5 +463,9 @@ class Trainer:
 if __name__ == "__main__":
     parser = build_parser()
     cfg = parser.parse_args()
+    try:
+        set_start_method("spawn")
+    except RuntimeError:
+        pass
     trainer = Trainer(cfg)
     trainer.train()
