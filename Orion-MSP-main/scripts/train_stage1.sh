@@ -151,8 +151,7 @@ torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/z
             --norm_first True \
             --checkpoint_dir ./tab/stage1/checkpoint/dir \
             --save_temp_every 50 \
-            --save_perm_every 5000 \
-            --model_compile True
+            --save_perm_every 5000
 
 
 # ------------------------------------------------------
@@ -215,5 +214,4 @@ torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/z
             --norm_first True \
             --checkpoint_dir ./tab/stage1/checkpoint/dir \
             --save_temp_every 50 \
-            --save_perm_every 5000 \
-            --model_compile True
+            --save_perm_every 5000
