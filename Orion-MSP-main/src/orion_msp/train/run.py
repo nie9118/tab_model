@@ -93,7 +93,7 @@ class Trainer:
                     self.config.wandb_id = f.read().strip()
             self.wandb = wandb.init(
                 dir=self.config.wandb_dir,
-                project="ldm",
+                project=self.config.wandb_project,
                 name=self.config.wandb_name,
                 id=self.config.wandb_id,
                 config=self.config,
