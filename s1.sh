@@ -72,9 +72,9 @@ srun --ntasks=${NUM_NODES} --ntasks-per-node=1 bash -lc '
             --dtype float32 \
             --np_seed 42 \
             --torch_seed 42 \
-            --max_steps 50000 \
+            --max_steps 25000 \
             --batch_size 512 \
-            --micro_batch_size 1 \
+            --micro_batch_size 4 \
             --lr 1e-4 \
             --scheduler cosine_warmup \
             --warmup_proportion 0.02 \
@@ -96,20 +96,13 @@ srun --ntasks=${NUM_NODES} --ntasks-per-node=1 bash -lc '
             --row_nhead 8 \
             --row_num_cls 4 \
             --row_rope_base 100000 \
-            --row_scales 1,4,16 \
-            --row_window 8 \
-            --row_num_random 2 \
-            --row_num_global 8 \
-            --row_group_mode pma \
-            --perc_num_latents 64 \
-            --perc_layers 3 \
             --icl_num_blocks 12 \
             --icl_nhead 4 \
             --ff_factor 2 \
             --norm_first True \
             --checkpoint_dir /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-MSP-main/tab_1/stage1/checkpoint/dir \
             --save_temp_every 50 \
-            --save_perm_every 1000
+            --save_perm_every 5000
 
 '
 
