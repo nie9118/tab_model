@@ -125,18 +125,18 @@ torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/z
             --batch_size 512 \
             --micro_batch_size 4 \
             --lr 1e-4 \
-            --scheduler cosine_warmup \
-            --warmup_proportion 0.02 \
+#            --scheduler cosine_warmup \
+#            --warmup_proportion 0.02 \
             --gradient_clipping 1.0 \
-            --prior_type mix_scm \
+#            --prior_type mix_scm \
             --prior_device cpu \
-            --batch_size_per_gp 4 \
+#            --batch_size_per_gp 4 \
             --min_features 2 \
             --max_features 100 \
             --max_classes 10 \
             --max_seq_len 1024 \
-            --min_train_size 0.1 \
-            --max_train_size 0.9 \
+#            --min_train_size 0.1 \
+#            --max_train_size 0.9 \
             --embed_dim 128 \
             --col_num_blocks 3 \
             --col_nhead 4 \

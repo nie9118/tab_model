@@ -69,4 +69,4 @@ done
 #手动登录
 #wandb login --relogin 2f4b01f1da6026ab2405638e7b9f3c4406ef50e1
 #手动同步
-#wandb sync /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-MSP-main/wandb/dir/wandb/offline-run-20260108_073323-ntab15as
+#wandb sync /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-MSP-main/wandb/dir/wandb/offline-run-20260109_091755-v440geif
