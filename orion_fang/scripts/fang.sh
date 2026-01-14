@@ -1,5 +1,3 @@
-cd /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/orion_fang
-export PYTHONPATH=$PWD/src
 torchrun  --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/orion_fang/src/orion_msp/train/run.py \
             --wandb_log True \
             --wandb_project Orion-BiX \
