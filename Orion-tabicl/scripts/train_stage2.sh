@@ -110,12 +110,12 @@
 #
 #
 #
-torchrun --standalone --nproc_per_node=1 /path/to/tabicl/train/run.py \
+torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-tabicl/src/orion_msp/train/run.py \
             --wandb_log True \
             --wandb_project TabICL \
-            --wandb_name Stage2 \
-            --wandb_dir /my/wandb/dir \
-            --wandb_mode online \
+            --wandb_name ldm \
+            --wandb_dir ./wandb/dir \
+            --wandb_mode offline \
             --device cuda \
             --dtype float32 \
             --np_seed 42 \
@@ -153,8 +153,8 @@ torchrun --standalone --nproc_per_node=1 /path/to/tabicl/train/run.py \
             --icl_nhead 4 \
             --ff_factor 2 \
             --norm_first True \
-            --checkpoint_dir /my/stage2/checkpoint/dir \
-            --checkpoint_path /my/stage1/checkpoint/dir/step-{latest}.ckpt \
+            --checkpoint_dir ./tab/stage2/checkpoint/dir \
+            --checkpoint_path ./tab/stage1/checkpoint/dir/step-{latest}.ckpt \
             --save_temp_every 5 \
             --save_perm_every 100 \
             --only_load_model True
