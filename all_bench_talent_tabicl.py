@@ -20,10 +20,10 @@ import pandas as pd
 warnings.filterwarnings("ignore", category=pd.errors.PerformanceWarning)
 
 # ===== 固定参数（按你的要求写死） =====
-DEFAULT_MODEL_PATH = "./ckp/dir"
-DEFAULT_DATA_ROOT  = "./test_datasets"
+DEFAULT_MODEL_PATH = "/vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-tabicl/tab/stage1/checkpoint/dir"
+DEFAULT_DATA_ROOT  = "/vast/users/guangyi.chen/causal_group/zijian.li/LDM/datasets"
 DEFAULT_OUTDIR     = "evaluation_results_fulltrain"
-FIXED_GPUS         = 3                    # 固定 8 卡
+FIXED_GPUS         = 8                    # 固定 8 卡
 COERCE_NUMERIC     = True                 # 固定自动数值化
 MERGE_VAL          = False                # 固定不合并 val（保留占位）
 SKIP_REGRESSION    = True                 # 固定跳过回归
