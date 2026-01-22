@@ -5,3 +5,5 @@
 test_datasets
 ckp
 ckp.tar
+evaluation.tar
+evaluation_results_fulltrain_s1
