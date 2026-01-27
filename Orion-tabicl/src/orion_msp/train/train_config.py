@@ -227,7 +227,7 @@ def build_parser():
     parser.add_argument(
         "--cosine_amplitude_decay",
         type=float,
-        default=0.8,
+        default=1,
         help="Amplitude scaling factor per cycle. Only used when scheduler is cosine_with_restarts",
     )
     parser.add_argument("--cosine_lr_end", type=float, default=2e-5, help="Final learning rate for cosine_with_restarts")

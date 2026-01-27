@@ -7,12 +7,13 @@
 # Generate prior datasets on the fly
 # ----------------------------------
 
-
+#offline-run-20260127_044244-inlfyc74
 torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-tabicl/src/orion_msp/train/run.py \
             --wandb_log True \
             --wandb_project TabICL \
             --wandb_name ldm_s1_2 \
             --wandb_dir ./wandb/dir \
+            --wandb_id inlfyc74 \
             --wandb_mode offline \
             --device cuda \
             --dtype float32 \

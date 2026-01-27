@@ -324,7 +324,6 @@ def evaluate_model(model_path: str, data_root: Path, outdir_root: Path) -> Tuple
 
     dirs = [d for d in sorted(data_root.iterdir()) if d.is_dir()]
     summarize_task_types(dirs)
-    print(":dfasdfasd")
 
     try:
         available_gpus = int(os.environ.get("NUM_GPUS", "0"))
