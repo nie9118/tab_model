@@ -25,7 +25,7 @@ torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/z
             --max_features 100 \
             --max_classes 10 \
             --min_seq_len 1000 \
-            --max_seq_len 40000 \
+            --max_seq_len 20000 \
             --log_seq_len True \
             --seq_len_per_gp True \
             --min_train_size 0.5 \
