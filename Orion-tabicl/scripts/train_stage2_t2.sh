@@ -2,7 +2,7 @@
 torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/zijian.li/dmir_crl/tab_model/Orion-tabicl/src/orion_msp/train/run.py \
             --wandb_log True \
             --wandb_project TabICL \
-            --wandb_name ldm \
+            --wandb_name ldm_s2_t2 \
             --wandb_dir ./wandb/dir \
             --wandb_mode offline \
             --device cuda \
@@ -11,7 +11,7 @@ torchrun --standalone --nproc_per_node=8 /vast/users/guangyi.chen/causal_group/z
             --torch_seed 42 \
             --max_steps 2000 \
             --batch_size 512 \
-            --micro_batch_size 4 \
+            --micro_batch_size 16 \
             --lr 2e-5 \
             --scheduler polynomial_decay_warmup \
             --warmup_proportion 0 \
