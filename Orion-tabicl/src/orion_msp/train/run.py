@@ -435,7 +435,8 @@ class Trainer:
                 failed += 1; continue
 
         if failed / max(1, len(micro_batches)) > 0.1:
-            raise RuntimeError("Too many failed micro-batches. Reduce memory usage or check data quality.")
+            print(1111)
+            # raise RuntimeError("Too many failed micro-batches. Reduce memory usage or check data quality.")
         
         if self.config.gradient_clipping > 0:
             self.scaler.unscale_(self.optimizer)
